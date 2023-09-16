@@ -17,20 +17,15 @@ class Register: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Register Page "
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func registerPressed(_ sender: UIButton) {
         if let email = emailTextfield.text,let password = passwordTextfield.text {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                
                 if let e = error{
-                    print(e.localizedDescription)
+                    self.showError(error: e)
                 }else{
-
-                    self.performSegue(withIdentifier: "toTabbar", sender: self)
-                        
+                    self.performSegue(withIdentifier: K.registerSegue, sender: self)
                     }
                     
                 }
@@ -38,17 +33,6 @@ class Register: UIViewController {
             
             
         }
-        
-        
-        /*
-         // MARK: - Navigation
-         
-         // In a storyboard-based application, you will often want to do a little preparation before navigation
-         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-         }
-         */
         
     }
 

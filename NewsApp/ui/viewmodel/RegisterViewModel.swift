@@ -7,6 +7,6 @@
 
 import Foundation
 
-class AuthViewModel: ObservableObject{
+class RegisterViewModel{
     
 }
