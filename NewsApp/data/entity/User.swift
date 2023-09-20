@@ -26,8 +26,26 @@ class User{
 }
 
 
-struct News{
-     let title: String
-     let description: String
-     let url: String
+
+
+class NewsResponse: Codable {
+    var status: String
+    var totalResults: Int
+    var articles: [News]
 }
+
+struct Source: Codable {
+    var name: String?
+}
+
+class News: Codable {
+    var source: Source?
+    var author: String?
+    var title: String
+    var description: String?
+    var url: String
+    var urlToImage: String?
+    var publishedAt: String 
+    var content: String?
+}
+
