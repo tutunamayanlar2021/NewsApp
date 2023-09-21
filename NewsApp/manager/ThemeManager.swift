@@ -17,9 +17,7 @@ class ThemeManager {
         didSet {
             UserDefaults.standard.set(getCurrentTheme().rawValue, forKey: "selectedTheme")
             
-            // Tema değişikliği bildirimini post et
-            NotificationCenter.default.post(name: Notification.Name("ThemeChangedNotification"), object: nil)
-        }
+                    }
     }
     
     init() {
@@ -36,10 +34,5 @@ class ThemeManager {
     
     func setTheme(_ theme: Theme) {
         currentTheme = theme
-    }
-    
-    func themeChanged() {
-        // Tema değişikliği bildirimi için post et
-        NotificationCenter.default.post(name: Notification.Name("ThemeChangedNotification"), object: nil)
     }
 }
