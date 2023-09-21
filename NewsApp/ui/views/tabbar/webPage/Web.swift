@@ -16,6 +16,7 @@ class Web: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         webView.load(URLRequest(url: URL(string: url ?? "https://developer.apple.com/forums/thread/670047")!))
     }
 }

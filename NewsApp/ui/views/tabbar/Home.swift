@@ -15,7 +15,7 @@ class Home: UIViewController {
     @IBOutlet weak var newsSearchBar: UISearchBar!
 
     private  var homeViewModel = HomeViewModel()
-
+    
      func reloadNewsCollectionView() {
         homeViewModel.getNews() {
             DispatchQueue.main.async {

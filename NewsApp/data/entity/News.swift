@@ -16,6 +16,16 @@ class News: Codable {
     var publishedAt: String
     var content: String?
 }
+class NewsResponse: Codable {
+    var status: String
+    var totalResults: Int
+    var articles: [News]
+}
+
+struct Source: Codable {
+    var name: String?
+}
+
 
 
 enum Category: CaseIterable{

@@ -30,14 +30,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQP-VR-HFm">
                                         <rect key="frame" x="115" y="10" width="238" height="108"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kader Cacık" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9S-0H-Itv">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kader Oral" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9S-0H-Itv">
                                                 <rect key="frame" x="0.0" y="25" width="238" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Fi-xF-dTw">
-                                                <rect key="frame" x="0.0" y="49" width="116.66666666666667" height="19.333333333333329"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="k@12.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Fi-xF-dTw">
+                                                <rect key="frame" x="0.0" y="49" width="74.666666666666671" height="19.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -53,7 +53,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="qQP-VR-HFm" firstAttribute="leading" secondItem="kWU-Eo-1xJ" secondAttribute="trailing" constant="5" id="20c-6I-abE"/>
                                     <constraint firstAttribute="bottom" secondItem="kWU-Eo-1xJ" secondAttribute="bottom" constant="20" id="3qV-e5-LAa"/>
@@ -77,9 +77,8 @@
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpP-Py-iVD">
-                                <rect key="frame" x="20" y="265" width="357" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpP-Py-iVD">
+                                <rect key="frame" x="20" y="267" width="357" height="35"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrow.left.circle.fill" catalog="system" title="Sign Out" imagePadding="6"/>
@@ -87,9 +86,8 @@
                                     <action selector="logOutPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gUV-HE-nbz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAf-r9-mmJ">
-                                <rect key="frame" x="20" y="301" width="357" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAf-r9-mmJ">
+                                <rect key="frame" x="20" y="312" width="357" height="35"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="xmark.circle.fill" catalog="system" title="Delete Account" imagePadding="5"/>
@@ -97,21 +95,50 @@
                                     <action selector="deleteAccountPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qum-0X-VcV"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wVZ-ev-SWQ">
+                                <rect key="frame" x="20" y="392" width="101" height="32"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <segments>
+                                    <segment title="Dark"/>
+                                    <segment title="Light"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segThemePressed:" destination="Y6W-OH-hqX" eventType="valueChanged" id="Y5G-jF-dYZ"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zh1-a5-zCe">
+                                <rect key="frame" x="20" y="362" width="53" height="20"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="fU0-b2-MA6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="6NG-av-ZeS"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fU0-b2-MA6" secondAttribute="trailing" constant="20" id="7cy-ju-FXf"/>
+                            <constraint firstItem="BAf-r9-mmJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="8iY-mg-oDr"/>
+                            <constraint firstItem="Zh1-a5-zCe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="9lI-Wf-fui"/>
+                            <constraint firstItem="Zh1-a5-zCe" firstAttribute="top" secondItem="BAf-r9-mmJ" secondAttribute="bottom" constant="15" id="IUY-QU-TFI"/>
+                            <constraint firstItem="mpP-Py-iVD" firstAttribute="top" secondItem="FKW-0f-IvZ" secondAttribute="bottom" constant="10" id="LjH-Ig-jxa"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mpP-Py-iVD" secondAttribute="trailing" constant="16" id="PBz-hQ-VCR"/>
                             <constraint firstItem="fU0-b2-MA6" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="QaA-qd-dSy"/>
+                            <constraint firstItem="wVZ-ev-SWQ" firstAttribute="top" secondItem="Zh1-a5-zCe" secondAttribute="bottom" constant="10" id="Y3g-jg-ZG4"/>
                             <constraint firstItem="FKW-0f-IvZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="bmD-M1-tPS"/>
                             <constraint firstItem="FKW-0f-IvZ" firstAttribute="top" secondItem="fU0-b2-MA6" secondAttribute="bottom" constant="40" id="iXI-Sd-WEV"/>
+                            <constraint firstItem="BAf-r9-mmJ" firstAttribute="top" secondItem="mpP-Py-iVD" secondAttribute="bottom" constant="10" id="nDe-Zz-o3x"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BAf-r9-mmJ" secondAttribute="trailing" constant="16" id="thK-co-b0W"/>
+                            <constraint firstItem="mpP-Py-iVD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="uPr-Aw-YAN"/>
+                            <constraint firstItem="wVZ-ev-SWQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="yyh-AH-RL1"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="xbR-TP-pTE"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="profileImageView" destination="kWU-Eo-1xJ" id="ha7-DR-bQj"/>
+                        <outlet property="segTheme" destination="wVZ-ev-SWQ" id="GxV-yv-2BI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -125,6 +152,9 @@
         <image name="xmark.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray3Color">
             <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

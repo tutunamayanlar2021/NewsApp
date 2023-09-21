@@ -12,8 +12,11 @@ class Profile: UIViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     
     
+    @IBOutlet weak var segTheme: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
+        applyTheme()
+        
         
         profileImageView.layer.masksToBounds = true
         profileImageView.layer.cornerRadius = 40
@@ -41,6 +44,32 @@ class Profile: UIViewController {
         }
     }
     
+    @IBAction func segThemePressed(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex{
+        case 0:
+            UIApplication.shared.keyWindow?.overrideUserInterfaceStyle = .dark
+            ThemeManager.shared.setTheme(.dark)
+            
+            
+        case 1:
+            UIApplication.shared.keyWindow?.overrideUserInterfaceStyle = .light
+            ThemeManager.shared.setTheme(.light)
+            
+            
+        default:
+            break
+        }
+        applyTheme()
+        
+    }
     
-    
+     func applyTheme() {
+        let currentTheme = ThemeManager.shared.getCurrentTheme()
+        switch currentTheme {
+        case .light:
+            view.backgroundColor = UIColor.white
+        case .dark:
+            view.backgroundColor = UIColor.black
+        }
+    }
 }
