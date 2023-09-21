@@ -10,23 +10,21 @@ import Foundation
 class User{
     var user_id: Int?
     var user_name: String?
+    var user_email: String?
+    var user_password: String?
     var user_bookmarkedNews: News?
-    
     
     init() {
     }
     
-    init(user_id: Int, user_name: String,user_bookmarkedNews: News) {
+    init(user_id: Int, user_name: String,user_email: String,user_password: String,user_bookmarkedNews: News) {
         self.user_id = user_id
         self.user_name = user_name
+        self.user_email = user_email
+        self.user_password = user_password
         self.user_bookmarkedNews = user_bookmarkedNews
     }
-    
-    
 }
-
-
-
 
 class NewsResponse: Codable {
     var status: String
@@ -36,16 +34,5 @@ class NewsResponse: Codable {
 
 struct Source: Codable {
     var name: String?
-}
-
-class News: Codable {
-    var source: Source?
-    var author: String?
-    var title: String
-    var description: String?
-    var url: String
-    var urlToImage: String?
-    var publishedAt: String 
-    var content: String?
 }
 

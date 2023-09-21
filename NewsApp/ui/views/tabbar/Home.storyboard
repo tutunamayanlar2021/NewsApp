@@ -75,20 +75,36 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <searchBar contentMode="redraw" placeholder="search news" translatesAutoresizingMaskIntoConstraints="NO" id="mPh-AV-FdL">
+                                <rect key="frame" x="0.0" y="92" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="mPh-AV-FdL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="1gY-k8-WOs"/>
                             <constraint firstItem="Bre-ul-aML" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="88T-5b-b2G"/>
+                            <constraint firstItem="mPh-AV-FdL" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="FHQ-fx-fmo"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Bre-ul-aML" secondAttribute="bottom" id="Vcl-tp-n0P"/>
+                            <constraint firstItem="mPh-AV-FdL" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="gVZ-gE-NMq"/>
                             <constraint firstItem="Bre-ul-aML" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="100" id="gtY-im-gEZ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Bre-ul-aML" secondAttribute="trailing" id="jzv-9z-RIv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="News" id="A4a-Er-zc3"/>
+                    <navigationItem key="navigationItem" title="News" id="A4a-Er-zc3">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="line.3.horizontal.decrease.circle.fill" catalog="system" id="vGI-mT-xHf">
+                            <connections>
+                                <action selector="filterButtonPressed:" destination="Y6W-OH-hqX" id="XqW-fO-eQX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="filterButton" destination="vGI-mT-xHf" id="mvx-eJ-C4Z"/>
                         <outlet property="newsCollectionView" destination="Bre-ul-aML" id="b5y-Zd-YhJ"/>
+                        <outlet property="newsSearchBar" destination="mPh-AV-FdL" id="TJS-Cm-BBF"/>
+                        <segue destination="MEY-4z-GAC" kind="show" identifier="goToWeb" id="xVu-S5-AEF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -116,8 +132,44 @@
             </objects>
             <point key="canvasLocation" x="783.96946564885491" y="-106.33802816901409"/>
         </scene>
+        <!--Web-->
+        <scene sceneID="O11-Lh-p77">
+            <objects>
+                <viewController id="MEY-4z-GAC" customClass="Web" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zFh-RV-IO1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3i1-qR-wNt">
+                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MXS-hg-q8C"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3i1-qR-wNt" firstAttribute="trailing" secondItem="MXS-hg-q8C" secondAttribute="trailing" id="7XE-mX-EtD"/>
+                            <constraint firstItem="3i1-qR-wNt" firstAttribute="leading" secondItem="MXS-hg-q8C" secondAttribute="leading" id="KX0-gu-yly"/>
+                            <constraint firstItem="MXS-hg-q8C" firstAttribute="bottom" secondItem="3i1-qR-wNt" secondAttribute="bottom" id="Ycr-X8-7y2"/>
+                            <constraint firstItem="3i1-qR-wNt" firstAttribute="top" secondItem="MXS-hg-q8C" secondAttribute="top" id="zRJ-D5-b54"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FEF-dQ-gqy"/>
+                    <connections>
+                        <outlet property="webView" destination="3i1-qR-wNt" id="9y8-Rq-tx1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ifr-SJ-IHf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2759" y="-106"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="line.3.horizontal.decrease.circle.fill" catalog="system" width="128" height="123"/>
         <image name="newspaper.fill" catalog="system" width="128" height="112"/>
         <namedColor name="fontcolor">
             <color red="0.26226478815078735" green="0.73882728815078735" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
