@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class Web: UIViewController {
+class Web: UIViewController{
     
     @IBOutlet weak var webView: WKWebView!
     
@@ -16,7 +16,8 @@ class Web: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        webView.load(URLRequest(url: URL(string: url ?? "https://developer.apple.com/forums/thread/670047")!))
+        webView.load(URLRequest(url: URL(string: url ?? "https://developer.apple.com")!))
+       
+
     }
 }

@@ -15,7 +15,7 @@ class Home: UIViewController {
     @IBOutlet weak var newsSearchBar: UISearchBar!
 
     private  var homeViewModel = HomeViewModel()
-    
+   
      func reloadNewsCollectionView() {
         homeViewModel.getNews() {
             DispatchQueue.main.async {
@@ -32,7 +32,6 @@ class Home: UIViewController {
         setupVC()
 
         reloadNewsCollectionView()
-
     }
     
     private func setupVC() {
@@ -112,11 +111,20 @@ extension Home: UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let article = homeViewModel.articles[indexPath.row]
         let urlString = article.url
-    
+ 
             self.performSegue(withIdentifier: "goToWeb", sender: urlString)
         
 
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToWeb" {
+            if let webViewController = segue.destination as? Web,
+                let urlString = sender as? String {
+                webViewController.url = urlString
+            }
+        }
+    }
+
 }
 
 extension Home: UICollectionViewDelegateFlowLayout {

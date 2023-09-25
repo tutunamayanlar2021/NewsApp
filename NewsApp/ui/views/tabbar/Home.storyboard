@@ -81,7 +81,7 @@
                             </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="themeColor"/>
                         <constraints>
                             <constraint firstItem="mPh-AV-FdL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="1gY-k8-WOs"/>
                             <constraint firstItem="Bre-ul-aML" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="88T-5b-b2G"/>
@@ -173,6 +173,9 @@
         <image name="newspaper.fill" catalog="system" width="128" height="112"/>
         <namedColor name="fontcolor">
             <color red="0.26226478815078735" green="0.73882728815078735" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="themeColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
