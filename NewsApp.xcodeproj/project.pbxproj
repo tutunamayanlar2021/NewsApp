@@ -108,7 +108,6 @@
 		15B96E432AAE477800D30B68 = {
 			isa = PBXGroup;
 			children = (
-				1582C23E2AC1F8F10051EF04 /* ApiKeys.plist */,
 				15B96E4E2AAE477800D30B68 /* NewsApp */,
 				15B96E4D2AAE477800D30B68 /* Products */,
 			);
@@ -125,6 +124,7 @@
 		15B96E4E2AAE477800D30B68 /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				1582C23E2AC1F8F10051EF04 /* ApiKeys.plist */,
 				15E20F872ABA05BA009237D6 /* service */,
 				15B96E4F2AAE477800D30B68 /* AppDelegate.swift */,
 				15B96E512AAE477800D30B68 /* SceneDelegate.swift */,
