@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		151A6C8B2ABB7FA900854E41 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A6C8A2ABB7FA900854E41 /* News.swift */; };
 		15610ED32ABF7F7300CFACEC /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15610ED22ABF7F7300CFACEC /* ThemeManager.swift */; };
+		1582C23F2AC1F8F10051EF04 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1582C23E2AC1F8F10051EF04 /* ApiKeys.plist */; };
 		15B39EC02ABC56280041646D /* Web.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B39EBF2ABC56280041646D /* Web.swift */; };
 		15B96E502AAE477800D30B68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B96E4F2AAE477800D30B68 /* AppDelegate.swift */; };
 		15B96E522AAE477800D30B68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B96E512AAE477800D30B68 /* SceneDelegate.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		151A6C8A2ABB7FA900854E41 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		15610ED22ABF7F7300CFACEC /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		1582C23E2AC1F8F10051EF04 /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		15B39EBF2ABC56280041646D /* Web.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web.swift; sourceTree = "<group>"; };
 		15B96E4C2AAE477800D30B68 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15B96E4F2AAE477800D30B68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		15B96E432AAE477800D30B68 = {
 			isa = PBXGroup;
 			children = (
+				1582C23E2AC1F8F10051EF04 /* ApiKeys.plist */,
 				15B96E4E2AAE477800D30B68 /* NewsApp */,
 				15B96E4D2AAE477800D30B68 /* Products */,
 			);
@@ -343,6 +346,7 @@
 				15B96E5C2AAE477A00D30B68 /* LaunchScreen.storyboard in Resources */,
 				15D287242AB506B2001BCD05 /* send.gif in Resources */,
 				15D2871E2AB3D25A001BCD05 /* delete.gif in Resources */,
+				1582C23F2AC1F8F10051EF04 /* ApiKeys.plist in Resources */,
 				15D286DE2AAF941A001BCD05 /* Welcome.storyboard in Resources */,
 				15B96E592AAE477A00D30B68 /* Assets.xcassets in Resources */,
 				15D286F32AAFE119001BCD05 /* Onboarding.storyboard in Resources */,

@@ -3,7 +3,18 @@ import Alamofire
 class NetworkManager {
     static let shared = NetworkManager()
 
-    private let apiKey = "f70ed7d37dcf4c21a647fe5ac3be99df"
+    private var apiKey: String {
+      get {
+        guard let filePath = Bundle.main.path(forResource: "ApiKeys", ofType: "plist") else {
+          fatalError("Couldn't find file 'TMDB-Info.plist'.")
+        }
+        let plist = NSDictionary(contentsOfFile: filePath)
+        guard let value = plist?.object(forKey: "apiKey") as? String else {
+          fatalError("Couldn't find key 'apiKey' in 'ApiKeys.plist'.")
+        }
+        return value
+      }
+    }
     
     private var articles: [News] = [] // Burada articles özelliği eklendi
     
