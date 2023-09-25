@@ -5,12 +5,12 @@ class NetworkManager {
 
     private var apiKey: String {
       get {
-        guard let filePath = Bundle.main.path(forResource: "ApiKeys", ofType: "plist") else {
-          fatalError("Couldn't find file 'TMDB-Info.plist'.")
+        guard let filePath = Bundle.main.path(forResource: "SecretKeys", ofType: "plist") else {
+          fatalError("Couldn't find file 'SecretKeys.plist'.")
         }
         let plist = NSDictionary(contentsOfFile: filePath)
         guard let value = plist?.object(forKey: "apiKey") as? String else {
-          fatalError("Couldn't find key 'apiKey' in 'ApiKeys.plist'.")
+          fatalError("Couldn't find key 'apiKey' in 'SecretKeys.plist'.")
         }
         return value
       }
