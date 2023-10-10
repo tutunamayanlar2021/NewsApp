@@ -18,7 +18,6 @@ class ThemeManager {
             }
             
         }
-        //  UserDefaults.standard.set(isDarkMode, forKey: themeKey)
     }
     
 }

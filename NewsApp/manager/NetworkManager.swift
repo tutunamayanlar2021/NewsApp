@@ -2,7 +2,8 @@ import Foundation
 import Alamofire
 class NetworkManager {
     static let shared = NetworkManager()
-
+    private init(){ }
+    
     private var apiKey: String {
       get {
         guard let filePath = Bundle.main.path(forResource: "SecretKeys", ofType: "plist") else {
@@ -16,10 +17,7 @@ class NetworkManager {
       }
     }
     
-    private var articles: [News] = [] // Burada articles özelliği eklendi
-    
-    private init() {}
-
+    private var articles: [News] = []
     func getNews(category: Category, completion: @escaping (Result<NewsResponse, Error>) -> Void) {
         guard let url = URL(string: "https://newsapi.org/v2/top-headlines?country=US&category=\(category)&apiKey=\(apiKey)")
         else {

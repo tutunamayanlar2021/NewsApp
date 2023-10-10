@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class Home: UIViewController {
     
@@ -18,9 +17,8 @@ class Home: UIViewController {
    
      func reloadNewsCollectionView() {
         homeViewModel.getNews() {
-            DispatchQueue.main.async {
                 self.newsCollectionView.reloadData()
-            }
+            
         }
          
         
@@ -87,6 +85,7 @@ extension Home: UICollectionViewDelegate,UICollectionViewDataSource{
         return homeViewModel.numberOfArticles
         
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "newsCell", for: indexPath) as! NewsCell
         
@@ -120,7 +119,8 @@ extension Home: UICollectionViewDelegate,UICollectionViewDataSource{
         if segue.identifier == "goToWeb" {
             if let webViewController = segue.destination as? Web,
                 let urlString = sender as? String {
-                webViewController.url = urlString
+                let vm = WebViewModel(url: urlString)
+                webViewController.web = vm
             }
         }
     }
